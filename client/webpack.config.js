@@ -19,12 +19,12 @@ module.exports = () => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: "./src/index.html",
+        template: "./index.html",
         title: "ATE",
       }),
       new InjectManifest({
-        swRc: "./src/sw.js",
-        swDest: "src-sw.js",
+        swSrc: './src-sw.js',
+        swDest: 'sw.js',
       }),
       new WebpackPwaManifest({
         fingerprints: false,
@@ -38,9 +38,9 @@ module.exports = () => {
         publicPath: "/",
         icons: [
           {
-            src: path.resolve("src/assets/icons/icon-512x512.png"),
+            src: path.resolve("src/images/logo.png"),
             sizes: [96, 128, 192, 256, 384, 512],
-            destination: path.join("assets", "icons"),
+            destination: path.join("images", "loggo"),
           },
         ],
       }),
